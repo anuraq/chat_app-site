@@ -1,0 +1,30 @@
+.chat-container{
+  height: 80%;
+  width: 600px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 50vh;
+  left: 50vw;
+  border-radius: 5%;
+  border: 1px solid black;
+  transform: translate(-50%, -50%);
+  background: rgb(150, 150, 150);
+}
+
+.chat-title{
+  padding: 20px;
+  font-size: 3.5rem;
+  box-sizing: border-box;
+  height: 100px;
+  border-bottom: 1px solid black;
+}
+.chat-field{
+  box-sizing: border-box;
+  flex-grow: 1;
+  border-bottom: 1px solid black;
+}
+.text-field{
+  box-sizing: border-box;
+  height: 100px;
+}

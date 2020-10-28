@@ -1,0 +1,11 @@
+<div class="chat-container">
+  <div class="chat-title">
+    chat-title
+  </div>
+  <div class="chat-field">
+    field
+  </div>
+  <div class="text-field">
+    input
+  </div>
+</div>
