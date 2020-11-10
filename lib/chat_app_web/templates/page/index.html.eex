@@ -1,11 +1,16 @@
-<div class="chat-container">
-  <div class="chat-title">
-    chat-title
+<div class="page">
+  <div class="nav-bar">
+    <div class="nav-title-text">Cluster</div>
   </div>
-  <div class="chat-field">
-    field
-  </div>
-  <div class="text-field">
-    input
+  <div class="body-container">
+    <div class="main-container">
+      <div class="chat-container">abc</div>
+      <div class="divider"></div> <!-- HR -->
+      <div class="right-container">
+        <div class="cluster-info"></div>
+        <!-- <div class="divider"></div> -->
+        <div class="under-dev"></div>
+      </div>
+    </div>
   </div>
 </div>
