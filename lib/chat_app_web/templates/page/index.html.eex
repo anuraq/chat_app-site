@@ -4,12 +4,28 @@
   </div>
   <div class="body-container">
     <div class="main-container">
-      <div class="chat-container">abc</div>
+      <div class="chat-container">
+        <div class="room-title">:global_chat</div>
+        <div id="messages" class="chat-field">
+          <!-- <div class="msg-con">
+            <div class="recieved chat-msg">Hey</div>
+          </div>
+          <div class="msg-con">
+            <div class="sent chat-msg">Hi</div>
+          </div> -->
+        </div>
+        <div class="input-field">
+          <div class="input-con">
+            <input id="chat-input" class="input-box"></input>
+            <div class="send-btn">send</div>
+          </div>
+        </div>
+      </div>
       <div class="divider"></div> <!-- HR -->
       <div class="right-container">
-        <div class="cluster-info"></div>
+        <div class="cluster-info">Clusters Info</div>
         <!-- <div class="divider"></div> -->
-        <div class="under-dev"></div>
+        <div class="under-dev">Under Dev</div>
       </div>
     </div>
   </div>

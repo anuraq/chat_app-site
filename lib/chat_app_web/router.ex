@@ -19,6 +19,7 @@ defmodule ChatAppWeb.Router do
     get "/", PageController, :index
   end
 
+
   # Other scopes may use custom stacks.
   # scope "/api", ChatAppWeb do
   #   pipe_through :api
