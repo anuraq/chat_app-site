@@ -1,4 +1,4 @@
-defmodule HelloWeb.RoomChannel do
+defmodule ChatAppWeb.RoomChannel do
   use Phoenix.Channel
 
   def join("room:all", _message, socket) do

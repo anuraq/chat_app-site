@@ -8,7 +8,7 @@
 // from the params if you are not using authentication.
 import {Socket} from "phoenix"
 
-let socket = new Socket("/socket", {params: {}})
+let socket = new Socket("/socket", {params: {token: window.userToken}})
 
 // When you connect, you'll often need to authenticate the client.
 // For example, imagine you have an authentication plug, `MyAuth`,
@@ -69,9 +69,14 @@ chatInput.addEventListener("keypress", event => {
 
 channel.on("new_msg", payload => {
   console.log(payload.body)
-  let messageItem = document.createElement("p")
-  messageItem.innerText = `[${Date()}] ${payload.body}`
-  messagesContainer.appendChild(messageItem)
+  let messageCon = document.createElement("div")
+  messageCon.className = "msg-con"
+  let msgItem = document.createElement("div");
+  msgItem.classList.add("recieved")
+  msgItem.classList.add("chat-msg")
+  msgItem.innerText = `[${new Date().toLocaleTimeString()}] ${payload.body}`
+  messageCon.appendChild(msgItem)
+  messagesContainer.appendChild(messageCon)
 })
 
 channel.join()
