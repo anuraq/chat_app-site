@@ -60,9 +60,21 @@ let channel = socket.channel("room:all", {})
 let chatInput = document.querySelector("#chat-input")
 let messagesContainer = document.querySelector("#messages")
 
+var objDiv = document.getElementById("messages");
+
 chatInput.addEventListener("keypress", event => {
   if(event.key === 'Enter'){
     channel.push("new_msg", {body: chatInput.value})
+
+    let messageCon = document.createElement("div")
+    messageCon.className = "msg-con"
+    let msgItem = document.createElement("div");
+    msgItem.classList.add("sent")
+    msgItem.classList.add("chat-msg")
+    msgItem.innerText = `[${new Date().toLocaleTimeString()}] ${chatInput.value}`
+    messageCon.appendChild(msgItem)
+    messagesContainer.appendChild(messageCon)
+    objDiv.scrollTop = objDiv.scrollHeight;
     chatInput.value = ""
   }
 })
@@ -77,6 +89,7 @@ channel.on("new_msg", payload => {
   msgItem.innerText = `[${new Date().toLocaleTimeString()}] ${payload.body}`
   messageCon.appendChild(msgItem)
   messagesContainer.appendChild(messageCon)
+  objDiv.scrollTop = objDiv.scrollHeight;
 })
 
 channel.join()

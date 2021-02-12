@@ -35,14 +35,13 @@ body{
   width: 60vw;
   display: flex;
   flex-direction:column;
-  position: relative;
   background-color: white;
   border-radius: 37px;
   border: 1px solid black;
   box-shadow: 5px 5px 8px #888888;
 }
 .room-title{
-  height:10%;
+  height: 10%;
   font-size: 30px;
   text-align: center;
   border-bottom: 1px solid black;
@@ -53,8 +52,9 @@ body{
   padding: 20px;
   flex-grow: 1;
   display: flex;
+  height: 400px;
   flex-direction: column;
-  justify-content: flex-end;
+  overflow-y: scroll;
 }
 .chat-msg{
   box-sizing: border-box;
@@ -62,6 +62,7 @@ body{
   background-color: #cbcbcb;
   max-width: 50%;
   margin: 10px 0;
+  overflow-x: hidden;
 }
 .msg-con{
   width: 100%;
