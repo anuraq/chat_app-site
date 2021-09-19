@@ -8,7 +8,8 @@
 // from the params if you are not using authentication.
 import {Socket} from "phoenix"
 
-let socket = new Socket("/socket", {params: {token: window.userToken}})
+// let socket = new Socket("/socket", {params: {token: window.userToken}})
+let socket = new Socket("/socket")
 
 // When you connect, you'll often need to authenticate the client.
 // For example, imagine you have an authentication plug, `MyAuth`,
@@ -65,13 +66,17 @@ var objDiv = document.getElementById("messages");
 chatInput.addEventListener("keypress", event => {
   if(event.key === 'Enter'){
     channel.push("new_msg", {body: chatInput.value})
-
+    let d = new Date();
     let messageCon = document.createElement("div")
     messageCon.className = "msg-con"
     let msgItem = document.createElement("div");
+    let timeCon = document.createElement("div");
+    timeCon.classList.add("time-con")
+    timeCon.innerText = `${d.getHours()}:${d.getMinutes()}`;
     msgItem.classList.add("sent")
     msgItem.classList.add("chat-msg")
-    msgItem.innerText = `[${new Date().toLocaleTimeString()}] ${chatInput.value}`
+    msgItem.innerText = `${chatInput.value}`
+    msgItem.appendChild(timeCon);
     messageCon.appendChild(msgItem)
     messagesContainer.appendChild(messageCon)
     objDiv.scrollTop = objDiv.scrollHeight;
@@ -80,13 +85,18 @@ chatInput.addEventListener("keypress", event => {
 })
 
 channel.on("new_msg", payload => {
-  console.log(payload.body)
+  // console.log(payload.body)
+  let d = new Date();
   let messageCon = document.createElement("div")
   messageCon.className = "msg-con"
   let msgItem = document.createElement("div");
+  let timeCon = document.createElement("div");
+  timeCon.classList.add("time-con")
+  timeCon.innerText = `${d.getHours()}:${d.getMinutes()}`
+  msgItem.innerText = `${payload.body}`
   msgItem.classList.add("recieved")
   msgItem.classList.add("chat-msg")
-  msgItem.innerText = `[${new Date().toLocaleTimeString()}] ${payload.body}`
+  msgItem.appendChild(timeCon);
   messageCon.appendChild(msgItem)
   messagesContainer.appendChild(messageCon)
   objDiv.scrollTop = objDiv.scrollHeight;

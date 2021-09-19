@@ -117,6 +117,12 @@ body{
 .under-dev{
   justify-self: flex-end;
 }
+.time-con {
+  font-size: 14px;
+  float: right;
+  display: relative;
+  margin-left: 10px;
+}
 @media only screen and (max-width: 600px) {
   .divider{
     display: none;
